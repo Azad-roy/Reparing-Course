@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>CourseMastery - Technical Training</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">CourseMastery</div>
-            <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -32,8 +35,8 @@
             <p>Empowering Skills, Building Careers</p>
             <p><strong>Location:</strong> Karbigahiya, Patna</p>
             <div class="hero-buttons">
-                <a href="#" class="btn-primary">Enroll Now</a>
-                <a href="#" class="btn-secondary">Contact Us</a>
+                <a href="#" class="btn btn-primary">Enroll Now</a>
+                <a href="#" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>
@@ -102,15 +105,24 @@
         </div>
     </section>
 
-    <!-- Contact Information -->
-    <section class="detailed-features">
+    <!-- Call to Action -->
+    <section class="cta">
         <div class="container">
-            <div class="feature-item" style="text-align: center;">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <p><span class="highlight">Rahul Kumar</span> (Ex.Trainer Urban company)</p>
-                    <p><span class="highlight">Phone:</span> 9835451516</p>
-                </div>
+            <h2>Limited Seats Available! Enroll Now!</h2>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Get Started Now</a>
+                <a href="#" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p><span class="highlight">Rahul Kumar</span> (Ex.Trainer Urban company)</p>
+                <p><span class="highlight">Phone:</span> 9835451516</p>
             </div>
         </div>
     </section>
@@ -143,6 +155,20 @@
             </div>
         </div>
     </footer>
-</body>
 
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('#main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
 </html>
